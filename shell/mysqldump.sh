@@ -1,6 +1,8 @@
 #!bin/bash
 # MySQL数据库备份脚本(mysqldump)
 # 删除15天以前备份
+# 可以添加定时任务每天备份
+# crontab -e 00 03 * * * /usr/local/sbin/mysqldump.sh 
 
 source /etc/profile    # 加载系统环境变量
 source ~/.bash_profile # 加载用户环境变量
