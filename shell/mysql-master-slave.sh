@@ -3,7 +3,8 @@
 # 此脚本在从服务器执行
 user="root"
 password="Pwd@123456"
-mycmd="mysql -u$user -p$password -h localhost"
+host="localhost"
+mycmd="mysql -u$user -p$password -h$host"
 
 function chkdb() {
     list=($($mycmd -e "show slave status \G" | egrep "Running|Behind" | awk -F: '{print $2}'))
